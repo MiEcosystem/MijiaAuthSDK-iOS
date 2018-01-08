@@ -49,6 +49,7 @@ typedef enum : NSUInteger {
     MiNormal,
     MiDeviceAuth,
     MiAccountBind,
+    MiAccountBindKey,
 } MiServiceType;
 
 @interface MiBaseReq : NSObject
@@ -62,6 +63,8 @@ typedef enum : NSUInteger {
  1.0版本的sdk是没有sdkversion的，errCode的返回只有0，或者-1.
  2.0以后的版本(包括2.0） response 添加新的属性respCode，这个属性
  返回更多的错误，
+ 3.0 MiDeviceAuth 添加userid 字段。注意userid是必须填的字段。不填授权出错
+ 4.0 添加bindkey的授权方式
  */
 @property (nonatomic, assign) CGFloat sdkVersion;
 /** 错误码 */
@@ -83,6 +86,8 @@ typedef enum : NSUInteger {
 
 @interface MiSendDeviceAuthReq : MiSendAuthReq
 @property (nonatomic, strong) NSString* did;
+@property (nonatomic, strong) NSString* userId;
+@property (nonatomic, assign) BOOL ignoreUserId;
 @end
 
 
@@ -115,3 +120,11 @@ typedef enum MiDeviceAuthRespCode {
 @end
 
 
+@interface MiSendBindKeyReq : MiSendAuthReq
+@property (nonatomic, strong) NSString* bindKey;
+@property (nonatomic, strong) NSString* model;
+@end
+
+@interface MiSendBindKeyResp : MiSendAuthResp
+@property (nonatomic, strong) NSString* result;
+@end

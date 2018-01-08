@@ -7,7 +7,7 @@
 //
 
 #import "MHAuthListViewController.h"
-
+#import "ViewController.h"
 @implementation MHAuthListViewController{
     NSMutableArray<NSDictionary*>*     _datas;
     UITableView*        _tableView;
@@ -26,20 +26,22 @@
 }
 - (void)initDatas{
     _datas = [[NSMutableArray alloc] initWithCapacity:10];
+    
     [_datas addObject:@{
                         @"title": @"设备授权",
                         @"ctl":@"MHDeviceAuthRequestViewController",
                         
                         }];
     
-    [_datas addObject:@{
-                        @"title":@"App授权",
-                        @"ctl":@"MHDeviceListTableViewController",
-                        }];
+
     
+//    [_datas addObject:@{
+//                        @"title":@"账户绑定并且授权设备（只能用于未绑定账户)",
+//                        @"ctl":@"MHDeviceAuthAndBindRequestViewController",
+//                        }];
     [_datas addObject:@{
-                        @"title":@"账户绑定并且授权设备（只能用于未绑定账户)",
-                        @"ctl":@"MHDeviceAuthAndBindRequestViewController",
+                        @"title":@"bindKey 授权方式",
+                        @"ctl":@"MHBindKeyTableViewController",
                         }];
 }
 #pragma mark - datasource

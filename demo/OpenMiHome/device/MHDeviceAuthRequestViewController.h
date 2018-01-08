@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
-@interface MHDeviceAuthRequestViewController : UITableViewController<SKStoreProductViewControllerDelegate>
+@interface MHDeviceAuthRequestViewController : UIViewController<SKStoreProductViewControllerDelegate>
 
 @end

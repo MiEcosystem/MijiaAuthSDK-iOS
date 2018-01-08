@@ -9,33 +9,31 @@
 /* Begin PBXBuildFile section */
 		307D4346530A61159650DF61 /* libPods-OpenMiHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA58B87C2B90941497AFD290 /* libPods-OpenMiHome.a */; };
 		6B23FB3A1EC99ABA0063A65D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B23FB391EC99ABA0063A65D /* StoreKit.framework */; };
-		6BB12D8F1F4EAEF000A558D6 /* MiNetworkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB12D8D1F4EAEF000A558D6 /* MiNetworkFramework.framework */; };
+		6B3F0D961FA0797100E830B3 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3F0D951FA0797100E830B3 /* libz.tbd */; };
+		6B3F0DA91FA0AC5700E830B3 /* MiNetworkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3F0DA81FA0AC5700E830B3 /* MiNetworkFramework.framework */; };
+		6B79FDB81F9EDC4E00EF5D35 /* MHBindKeyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B79FDB71F9EDC4E00EF5D35 /* MHBindKeyTableViewController.m */; };
 		6BB12D901F4EAEF000A558D6 /* MiPassport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB12D8E1F4EAEF000A558D6 /* MiPassport.framework */; };
-		6BE018A21EC94FAA007E193D /* MHDeviceListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE018A01EC94FAA007E193D /* MHDeviceListTableViewController.m */; };
 		6BE833921EC9440100E86584 /* MHAuthListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE833911EC9440100E86584 /* MHAuthListViewController.m */; };
 		6BE833961EC9485600E86584 /* MHDeviceAuthRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE833951EC9485600E86584 /* MHDeviceAuthRequestViewController.m */; };
-		6BEA83291F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEA83281F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.m */; };
 		9F6E69881E2CEA6500A868DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E69871E2CEA6500A868DE /* main.m */; };
 		9F6E698B1E2CEA6500A868DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E698A1E2CEA6500A868DE /* AppDelegate.m */; };
 		9F6E69911E2CEA6500A868DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6E698F1E2CEA6500A868DE /* Main.storyboard */; };
 		9F6E69931E2CEA6500A868DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6E69921E2CEA6500A868DE /* Assets.xcassets */; };
 		9F6E69961E2CEA6500A868DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6E69941E2CEA6500A868DE /* LaunchScreen.storyboard */; };
-		9F6E699F1E2CEE9D00A868DE /* MHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E699E1E2CEE9D00A868DE /* MHViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3425AA7CD3C67B44D715F5C4 /* Pods-OpenMiHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMiHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMiHome/Pods-OpenMiHome.debug.xcconfig"; sourceTree = "<group>"; };
 		6B23FB391EC99ABA0063A65D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		6BB12D8D1F4EAEF000A558D6 /* MiNetworkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MiNetworkFramework.framework; sourceTree = "<group>"; };
+		6B3F0D951FA0797100E830B3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6B3F0DA81FA0AC5700E830B3 /* MiNetworkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MiNetworkFramework.framework; sourceTree = "<group>"; };
+		6B79FDB61F9EDC4E00EF5D35 /* MHBindKeyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBindKeyTableViewController.h; sourceTree = "<group>"; };
+		6B79FDB71F9EDC4E00EF5D35 /* MHBindKeyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBindKeyTableViewController.m; sourceTree = "<group>"; };
 		6BB12D8E1F4EAEF000A558D6 /* MiPassport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MiPassport.framework; sourceTree = "<group>"; };
-		6BE018A01EC94FAA007E193D /* MHDeviceListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDeviceListTableViewController.m; sourceTree = "<group>"; };
-		6BE018A11EC94FAA007E193D /* MHDeviceListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDeviceListTableViewController.h; sourceTree = "<group>"; };
 		6BE833901EC9440100E86584 /* MHAuthListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAuthListViewController.h; sourceTree = "<group>"; };
 		6BE833911EC9440100E86584 /* MHAuthListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHAuthListViewController.m; sourceTree = "<group>"; };
 		6BE833941EC9485600E86584 /* MHDeviceAuthRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDeviceAuthRequestViewController.h; sourceTree = "<group>"; };
 		6BE833951EC9485600E86584 /* MHDeviceAuthRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDeviceAuthRequestViewController.m; sourceTree = "<group>"; };
-		6BEA83271F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDeviceAuthAndBindRequestViewController.h; sourceTree = "<group>"; };
-		6BEA83281F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDeviceAuthAndBindRequestViewController.m; sourceTree = "<group>"; };
 		9F6E69831E2CEA6500A868DE /* OpenMiHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenMiHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6E69871E2CEA6500A868DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F6E69891E2CEA6500A868DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,8 +42,6 @@
 		9F6E69921E2CEA6500A868DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6E69951E2CEA6500A868DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6E69971E2CEA6500A868DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F6E699D1E2CEE9D00A868DE /* MHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHViewController.h; sourceTree = "<group>"; };
-		9F6E699E1E2CEE9D00A868DE /* MHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHViewController.m; sourceTree = "<group>"; };
 		AB11B9B54DC7E81F128031DF /* Pods-OpenMiHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenMiHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenMiHome/Pods-OpenMiHome.release.xcconfig"; sourceTree = "<group>"; };
 		CA58B87C2B90941497AFD290 /* libPods-OpenMiHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenMiHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -55,8 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B3F0DA91FA0AC5700E830B3 /* MiNetworkFramework.framework in Frameworks */,
 				6B23FB3A1EC99ABA0063A65D /* StoreKit.framework in Frameworks */,
-				6BB12D8F1F4EAEF000A558D6 /* MiNetworkFramework.framework in Frameworks */,
+				6B3F0D961FA0797100E830B3 /* libz.tbd in Frameworks */,
 				6BB12D901F4EAEF000A558D6 /* MiPassport.framework in Frameworks */,
 				307D4346530A61159650DF61 /* libPods-OpenMiHome.a in Frameworks */,
 			);
@@ -65,23 +62,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B79FDB51F9EDC2500EF5D35 /* bindKey */ = {
+			isa = PBXGroup;
+			children = (
+				6B79FDB61F9EDC4E00EF5D35 /* MHBindKeyTableViewController.h */,
+				6B79FDB71F9EDC4E00EF5D35 /* MHBindKeyTableViewController.m */,
+			);
+			path = bindKey;
+			sourceTree = "<group>";
+		};
 		6BB12D8C1F4EAEF000A558D6 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				6BB12D8D1F4EAEF000A558D6 /* MiNetworkFramework.framework */,
+				6B3F0DA81FA0AC5700E830B3 /* MiNetworkFramework.framework */,
 				6BB12D8E1F4EAEF000A558D6 /* MiPassport.framework */,
 			);
 			name = lib;
 			path = ../lib;
-			sourceTree = "<group>";
-		};
-		6BE0189F1EC94F82007E193D /* app */ = {
-			isa = PBXGroup;
-			children = (
-				6BE018A01EC94FAA007E193D /* MHDeviceListTableViewController.m */,
-				6BE018A11EC94FAA007E193D /* MHDeviceListTableViewController.h */,
-			);
-			path = app;
 			sourceTree = "<group>";
 		};
 		6BE833931EC9483400E86584 /* device */ = {
@@ -93,18 +90,10 @@
 			path = device;
 			sourceTree = "<group>";
 		};
-		6BEA83261F00E5690074D56C /* deviceBind */ = {
-			isa = PBXGroup;
-			children = (
-				6BEA83271F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.h */,
-				6BEA83281F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.m */,
-			);
-			path = deviceBind;
-			sourceTree = "<group>";
-		};
 		93BF7F97ACBACF0017D87923 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B3F0D951FA0797100E830B3 /* libz.tbd */,
 				6B23FB391EC99ABA0063A65D /* StoreKit.framework */,
 				CA58B87C2B90941497AFD290 /* libPods-OpenMiHome.a */,
 			);
@@ -133,15 +122,12 @@
 		9F6E69851E2CEA6500A868DE /* OpenMiHome */ = {
 			isa = PBXGroup;
 			children = (
-				6BEA83261F00E5690074D56C /* deviceBind */,
-				6BE0189F1EC94F82007E193D /* app */,
+				6B79FDB51F9EDC2500EF5D35 /* bindKey */,
 				6BE833931EC9483400E86584 /* device */,
 				6BE833901EC9440100E86584 /* MHAuthListViewController.h */,
 				6BE833911EC9440100E86584 /* MHAuthListViewController.m */,
 				9F6E69891E2CEA6500A868DE /* AppDelegate.h */,
 				9F6E698A1E2CEA6500A868DE /* AppDelegate.m */,
-				9F6E699D1E2CEE9D00A868DE /* MHViewController.h */,
-				9F6E699E1E2CEE9D00A868DE /* MHViewController.m */,
 				9F6E698F1E2CEA6500A868DE /* Main.storyboard */,
 				9F6E69921E2CEA6500A868DE /* Assets.xcassets */,
 				9F6E69941E2CEA6500A868DE /* LaunchScreen.storyboard */,
@@ -245,13 +231,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenMiHome-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		50775648188CE5DF6ACED8B9 /* [CP] Embed Pods Frameworks */ = {
@@ -291,12 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B79FDB81F9EDC4E00EF5D35 /* MHBindKeyTableViewController.m in Sources */,
 				6BE833921EC9440100E86584 /* MHAuthListViewController.m in Sources */,
-				9F6E699F1E2CEE9D00A868DE /* MHViewController.m in Sources */,
 				9F6E698B1E2CEA6500A868DE /* AppDelegate.m in Sources */,
-				6BE018A21EC94FAA007E193D /* MHDeviceListTableViewController.m in Sources */,
 				6BE833961EC9485600E86584 /* MHDeviceAuthRequestViewController.m in Sources */,
-				6BEA83291F00E6940074D56C /* MHDeviceAuthAndBindRequestViewController.m in Sources */,
 				9F6E69881E2CEA6500A868DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +410,7 @@
 					"$(PROJECT_DIR)/OpenMiHome/MiNetworkFramework/3rd",
 					"$(PROJECT_DIR)/../lib",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = OpenMiHome/Info.plist;
@@ -449,6 +437,7 @@
 					"$(PROJECT_DIR)/OpenMiHome/MiNetworkFramework/3rd",
 					"$(PROJECT_DIR)/../lib",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = OpenMiHome/Info.plist;

@@ -20,5 +20,6 @@
 @property (nonatomic, copy) NSString *ota_status;
 @property (nonatomic, copy) NSString *timeout_time;
 @property (nonatomic, assign) NSInteger updating;
+@property (nonatomic, copy) NSString* desp;
 
 @end

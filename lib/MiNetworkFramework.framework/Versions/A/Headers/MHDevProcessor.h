@@ -25,6 +25,13 @@
                  completion:(void (^)(NSArray <MHDevPropertyValue *> *, NSError *error))completion;
 
 - (void)setDeviceProperties:(NSArray <MHDevPropertyValue *> *)properties
-                 completion:(void (^)(id response, NSError *error))completion;
+                 completion:(void (^)(MHDevPropertyResponse* response, NSError *error))completion;
 
+- (void)setDeviceAction:(NSString*)aid inParam:(NSArray*)inParam completion:(void (^)(MHDevServiceResponse* response, NSError *error))completion;
+
+- (void)unbindDevice:(NSString*)did success:( void(^)(id obj)) successBlock fail:(void (^)(NSError* err) ) errBlock;
+
+- (void)subscriptionProperties:(NSArray*) properties withAuthorization:(NSString*)authorization identifier:(NSString*)identifier success:( void(^)(id obj)) successBlock fail:(void (^)(NSError* err) ) errBlock;
+
+- (void)subscriptionEvent:(NSArray*) properties withAuthorization:(NSString*)authorization identifier:(NSString*)identifier success:( void(^)(id obj)) successBlock fail:(void (^)(NSError* err) ) errBlock;
 @end

@@ -37,5 +37,5 @@
 - (void)sendNormalPUTRequest:(MHMiotBaseRequest *)request sucess:(void(^)(MHMiotBaseRequest *request,id responseObject))sucess failure:(void(^)(NSError* error))failure;
 
 
-
+- (void)sendDataRequest:(MHMiotBaseRequest *)request sucess:(void(^)(MHMiotBaseRequest *request,id responseObject))sucess failure:(void(^)(NSError* error))failure;
 @end

@@ -41,9 +41,13 @@
 			<string>OpenMiHome</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>XM申请的appid</string>
+				<string>XM44212592383956891</string>
 			</array>
 		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mihome</string>
 	</array>
 </dict>
 </plist>

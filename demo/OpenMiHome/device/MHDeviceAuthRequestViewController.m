@@ -10,14 +10,10 @@
 #import "MiNetworkFramework/MiApi.h"
 #import "MiNetworkFramework/MHAuthDeviceManager.h"
 #import "MiNetworkFramework/MHDevices.h"
-
 #import <StoreKit/StoreKit.h>
 
 @interface MHDeviceAuthRequestViewController ()<MiApiDelegate>
-@property (nonatomic, strong) MHAuthDeviceManager *manager;
-@property (nonatomic, strong) NSArray<MHDevice*> *deviceList;
 @property (nonatomic, strong) UILabel *hintLabel;
-
 @end
 
 @implementation MHDeviceAuthRequestViewController{
@@ -26,10 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.manager = [[MHAuthDeviceManager alloc] init];
-    
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0,CGRectGetWidth(self.view.frame), 88)];
-    
+
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 88,CGRectGetWidth(self.view.frame), 88)];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"点击授权" forState:UIControlStateNormal];
     [button setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 44)];
@@ -46,14 +41,8 @@
     hintV.textColor = [UIColor redColor];
     [v addSubview:hintV];
     self.hintLabel = hintV;
+    [self.view addSubview:v];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Retry" style:UIBarButtonItemStylePlain target:self action:@selector(getDeviceList)];
-    
-    self.deviceList = @[];
-    self.tableView.tableHeaderView = v;
-    v.backgroundColor = [UIColor colorWithRed:0xf6/255.0 green:0xf6/255.0 blue:0xf6/255.0 alpha:1];
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
     self.title = @"设备授权";
 }
 
@@ -163,30 +152,12 @@
         self.hintLabel.text = @"授权成功";
         
     }
-    
-    [self getDeviceList];
+
 }
 
-- (void)getDeviceList
-{
-    self.deviceList = @[];
-    [self.tableView reloadData];
-    
-    __weak typeof(self) weakself = self;
-    [self.manager fetchAuthDeviceListWithFilters:@[] DeviceListBlock:^(MHDevices *devs) {
-        if (devs) {
-            weakself.deviceList = devs.devices;
-            [weakself.tableView reloadData];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
-}
 
 - (void)sendDeviceAuthRequest{
-    self.deviceList = @[];
     self.hintLabel.text = @"";
-    [self.tableView reloadData];
     
     MiSendDeviceAuthReq *request = [[MiSendDeviceAuthReq alloc] init];
     NSString* did = _didField.text ;
@@ -194,7 +165,9 @@
         self.hintLabel.text = @"did 为空";
         return;
     }
+    request.userId = @"1080231669";
     request.did = did ;//@"58067462";
+    request.ignoreUserId = YES;
     BOOL opt = [MiApi sendAuthReq:request viewController:self delegate:self];
     if(opt == NO){
         NSLog(@"米家 app 没有安装");
@@ -224,37 +197,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _deviceList.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    MHDevice *dev = _deviceList[indexPath.row];
-    cell.textLabel.numberOfLines = 2;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@\n did:%@, pid:%ld", dev.name, dev.did, dev.pid];
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
