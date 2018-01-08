@@ -1,7 +1,7 @@
 #授权方式
 目前授权方式分两种：
-1、设备授权，
-2、设备账户绑定+授权
+- 设备授权，
+- [设备账户绑定+授权](./绑定账户授权.md)
 
 #iOS 设备授权使用说明
 
@@ -15,8 +15,9 @@
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     //注册appid
-	[MiApi registerApp:@"申请的app id"];
+    [MiApi registerApp:@"申请的app id"];
 }
+
 ```
 
 
@@ -61,33 +62,45 @@ info.plist写法如下
 ```objc
 MiSendDeviceAuthReq *request = [[MiSendDeviceAuthReq alloc] init];
 request.did = did ;
+request.userid = userid;
 BOOL opt = [MiApi sendAuthReq:request viewController:self delegate:self];
 if(opt == NO){
     NSLog(@"米家 app 没有安装");
     [self downloadApp];
 }
 ```
-可参考Demo 中的 MHDeviceAuthRequestViewController.m  或者 MHDeviceAuthAndBindRequestViewController.m 的sendDeviceAuthRequest方法， 绑定绑定账户并授权调用方式
+可参考Demo 中的 MHBindKeyTableViewController.h  或者 MHBindKeyTableViewController.m 的sendDeviceAuthRequest方法， 绑定绑定账户并授权调用方式
 ```objc
-MiSendAccountBindReq *request = [[MiSendAccountBindReq alloc] init];
-request.did = did ;
-request.sn = sn; //sn
-request.token = token;//设备token;
-request.model = model;//设备model
-request.timeStamp = timeStamp;//时间戳
+MiSendBindKeyReq *request = [[MiSendBindKeyReq alloc] init];
+NSString* bindKey = _bindKeyField.text ;
+if(bindKey == nil || [bindKey isEqualToString:@""]){
+self.hintLabel.text = @"bindKey 为空";
+return;
+}
+
+request.bindKey = bindKey ;//@"58067462";
+//    request.sid =  _bindKeyField.text;
+request.model = _modelField.text;
+
 BOOL opt = [MiApi sendAuthReq:request viewController:self delegate:self];
 if(opt == NO){
-    NSLog(@"米家 app 没有安装");
-    [self downloadApp];
+NSLog(@"米家 app 没有安装");
+[self downloadApp];
 }
 ```
 代码里面的delegate 需要实现 MiApiDelegate。当授权完成后，米家调起对应的app。 需要实现
-```objc。
+
+```objc
  - (void)onResp:(MiBaseResp *)resp
 ```
-方法
+方法,并且在AppDelegate的application:openURL:sourceApplication 的方法中添加如下代码
+
+```objc
+BOOL handleRet = [MiApi handleOpenURL:url delegate:self];
+
+```
     
-可参考Demo 中的 MHDeviceAuthRequestViewController.m 和 MHDeviceAuthAndBindRequestViewController.m 的onResp代码
+可参考Demo 中的 MHBindKeyTableViewController.h 和 MHBindKeyTableViewController.m 的onResp代码
  ，具体代码如下
 ```objc
 - (void)handleResponseV1:(MiBaseResp *)resp{
@@ -141,11 +154,13 @@ if(opt == NO){
 }
 
 - (void)handleResponseV2:(MiBaseResp *)resp{
-    if(resp.respCode == kMijiaAuthBindSuccess){
-        self.hintLabel.text = @"授权成功";
-    }else{
-        self.hintLabel.text = [MiApi respCodeString:resp.respCode];
+    NSMutableString* msg = [[NSMutableString alloc] initWithCapacity:1000];
+    [msg appendString:[MiApi respCodeString:resp.respCode]];
+    if(resp.errStr){
+        [msg appendString:resp.errStr];
     }
+    self.hintLabel.text = msg;
+    [self.hintLabel sizeToFit];
 }
 
 - (void)onResp:(MiBaseResp *)resp{
@@ -180,9 +195,15 @@ if(opt == NO){
 如果是要给某个设备访问其他设备的权限，运行Demo后请选择“设备授权”
 
 绑定账户并授权
-具体代码在 MHDeviceAuthAndBindRequestViewController.m 里面。
+具体代码在 MHBindKeyTableViewController.m 里面。
 这时要注意的是，如果使用2.0的以后的SDK。respCode的值的区别。
 如果respCode 为 kMijiaAuthSuccess，就是说绑定和授权都成功了。
 如果respCode 为kMijiaAuthBindSuccess，就是说绑定成功，但是授权没有成功，（授权没有成功可能是用户点击返回按钮，或者服务器在授权的时候错误）
+
+bindKey
+具体代码在MHBindKeyTableViewController.m 。
+
+
+
 
 
